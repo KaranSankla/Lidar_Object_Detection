@@ -1,0 +1,2 @@
+CAR ID: 1, YOLO distance: 16.18m, GT distance: 16.30m, IoU Between YoloBB [658, 176, 752, 247] and GT_BB [655, 174, 754, 248]: 0.91
+CAR ID: 2, YOLO distance: 49.33m, GT distance: 53.73m, IoU Between YoloBB [596, 180, 620, 197] and GT_BB [593, 178, 620, 197]: 0.80

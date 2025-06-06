@@ -581,7 +581,7 @@ def process_frame_with_statistics(seq=0, cam_id=0):
                                                                                        erosion_iterations=1)
 
         # Filter valid points
-        valid = (u >= 0) & (u < camera.width) & (v >= 0) & (v < camera.height) & (depth > 0) & (depth < 30)
+        valid = (u >= 0) & (u < camera.width) & (v >= 0) & (v < camera.height) & (depth > 0) & (depth < 50)
         valid_indices = np.where(valid)[0]
 
         if len(valid_indices) == 0:

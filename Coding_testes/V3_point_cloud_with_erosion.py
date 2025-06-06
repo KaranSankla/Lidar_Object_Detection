@@ -501,7 +501,7 @@ def create_colored_point_cloud_with_bbox_analysis(car_statistics):
         if np.any(~inside_mask):
             points_outside = car_points[~inside_mask]
             # Make outside points darker (multiply by 0.5) or use red tint
-            outside_color = np.array([1.0, 0.3, 0.3])  # Reddish for outside points
+            outside_color = np.array([stats['color'][2], stats['color'][1], stats['color'][0]]) / 255.0
             pcd_outside = create_point_cloud(points_outside,
                                              np.tile(outside_color, (len(points_outside), 1)))
             geometries.append(pcd_outside)

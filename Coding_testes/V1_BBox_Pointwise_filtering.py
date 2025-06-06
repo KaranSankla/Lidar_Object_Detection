@@ -354,7 +354,7 @@ def process_frame(seq=0, cam_id=0):
         seg_image, masks, colors, boxes, confidences = image_segmentation(bgr_image.copy())
 
         # Filter valid points
-        valid = (u >= 0) & (u < camera.width) & (v >= 0) & (v < camera.height) & (depth > 0) & (depth < 30)
+        valid = (u >= 0) & (u < camera.width) & (v >= 0) & (v < camera.height) & (depth > 0) & (depth < 50)
         valid_indices = np.where(valid)[0]
 
         if len(valid_indices) == 0:

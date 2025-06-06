@@ -476,7 +476,8 @@ def create_colored_point_cloud_with_bbox_analysis(car_statistics):
         if np.any(~inside_mask):
             points_outside = car_points[~inside_mask]
             # Make outside points darker (multiply by 0.5) or use red tint
-            outside_color = np.array([1.0, 0.3, 0.3])  # Reddish for outside points
+            #outside_color = np.array([1.0, 0.3, 0.3])
+            outside_color = np.array([stats['color'][2], stats['color'][1], stats['color'][0]]) / 255.0# Reddish for outside points
             pcd_outside = create_point_cloud(points_outside,
                                              np.tile(outside_color, (len(points_outside), 1)))
             geometries.append(pcd_outside)
@@ -488,6 +489,8 @@ def create_colored_point_cloud_with_bbox_analysis(car_statistics):
             geometries.append(bbox_lines)
 
     return geometries
+
+
 def process_frame_with_statistics(seq=0, cam_id=0):
     """Main processing function with detailed point statistics"""
     # ... (keeping all the existing setup code the same until the matching part)
@@ -554,7 +557,7 @@ def process_frame_with_statistics(seq=0, cam_id=0):
         seg_image, masks, colors, boxes, confidences = image_segmentation(bgr_image.copy())
 
         # Filter valid points
-        valid = (u >= 0) & (u < camera.width) & (v >= 0) & (v < camera.height) & (depth > 0) & (depth < 30)
+        valid = (u >= 0) & (u < camera.width) & (v >= 0) & (v < camera.height) & (depth > 0) & (depth < 50)
         valid_indices = np.where(valid)[0]
 
         if len(valid_indices) == 0:

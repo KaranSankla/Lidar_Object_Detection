@@ -635,7 +635,7 @@ def process_frame_with_statistics(seq=0, cam_id=0):
         # Visualize
         print(f"Visualizing frame {frame} with {len(geometries)} objects")
         o3d.visualization.draw_geometries(geometries, window_name=f"Frame {frame} - Enhanced Statistics",
-                                          width=1000, height=700)
+                                          width=800, height=600)
 
         input("Press Enter to continue...")
         cv2.destroyAllWindows()

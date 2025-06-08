@@ -199,7 +199,7 @@ def create_bbox_lines(corners, color=[1, 0, 0]):
     lines = [
         [0, 1], [1, 3], [3, 2], [2, 0],  # front face
         [4, 5], [5, 7], [7, 6], [6, 4],  # back face
-        [0, 4], [1, 5], [2, 6], [3, 7]  # connections
+        [0, 5], [1, 4], [2, 7], [3, 6]  # connections
     ]
 
     line_set = o3d.geometry.LineSet(

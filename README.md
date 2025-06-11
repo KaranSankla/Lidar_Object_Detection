@@ -1,4 +1,4 @@
-# Lidar_Object_Detection
+
 # 🚗 3D Car Detection & Segmentation with LiDAR and YOLOv11 on KITTI-360
 
 This project performs instance-level car segmentation and 3D visualization by combining LiDAR point clouds with camera images from the KITTI-360 dataset. Using YOLOv8 for 2D detection and Open3D for 3D rendering, it maps segmented cars onto the LiDAR point cloud and evaluates detection accuracy using point-level metrics.
